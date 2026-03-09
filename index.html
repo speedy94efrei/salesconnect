@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SalesConnect — Cabinet de recrutement d'agents commerciaux indépendants rémunérés à la commission.">
+<title>SalesConnect — Recrutez des agents commerciaux performants</title>
+<link rel="icon" type="image/png" href="assets/logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+<body>
+
+  <!-- ══ STICKY NAV ══ -->
+  <nav class="sticky-nav" id="stickyNav">
+    <a href="#" class="sn-logo">
+      <img src="assets/logo.jpg" alt="SalesConnect" class="sn-logo-img">
+    </a>
+    <div class="sn-links">
+      <a href="#services">Nos services</a>
+      <a href="#methode">Méthode</a>
+      <a href="#offre">Notre offre</a>
+      <a href="#avis">Avis clients</a>
+      <a href="#faq">FAQ</a>
+      <a href="#rdv" class="sn-cta" onclick="openCalendly(event)">Prendre RDV</a>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="toggleMenu()">Nos services</a>
+    <a href="#methode" onclick="toggleMenu()">Méthode</a>
+    <a href="#offre" onclick="toggleMenu()">Notre offre</a>
+    <a href="#avis" onclick="toggleMenu()">Avis clients</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#rdv" class="mobile-cta" onclick="openCalendly(event)">Prendre RDV</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <img src="assets/logo.jpg" alt="SalesConnect" class="hero-logo">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Cabinet de recrutement spécialisé
+        </div>
+        <h1>Recrutez des agents<br>commerciaux <span>performants</span></h1>
+        <p class="hero-sub">Agents indépendants rémunérés exclusivement à la commission.<br>Zéro charge fixe — 100% résultats.</p>
+        <button class="hero-btn" onclick="openCalendly(event)">
+          📅 Lancer ma campagne de recrutement
+        </button>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>6 ans</strong><span>d'expertise</span></div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat"><strong>150k+</strong><span>profils en base</span></div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat"><strong>14 jours</strong><span>premiers candidats</span></div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/robin.jpg" alt="Robin - SalesConnect" class="robin-photo">
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Découvrir</span>
+      <div class="arrow-down"></div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES / CARDS ══ -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">L'expertise SalesConnect</span>
+        <h2 class="section-title">Ce que nous faisons pour vous</h2>
+        <p class="section-sub">Trois piliers pour développer votre force de vente sans charges fixes.</p>
+      </div>
+      <div class="services-grid reveal">
+
+        <div class="scard dark">
+          <div class="scard-icon">🏆</div>
+          <h3>Recrutement d'agents</h3>
+          <p class="scard-desc">Nous identifions et sélectionnons les meilleurs agents commerciaux indépendants pour votre secteur.</p>
+          <ul class="scard-list">
+            <li>Sourcing dans +150 000 profils qualifiés</li>
+            <li>3 à 5 ans d'expérience minimum</li>
+            <li>Réseau de professionnels établi</li>
+            <li>Basé sur votre zone géographique</li>
+            <li>Garantie période de test 3 mois</li>
+          </ul>
+        </div>
+
+        <div class="scard light">
+          <div class="scard-icon">⚡</div>
+          <h3>Commission & rentabilité</h3>
+          <p class="scard-desc">Pilotez votre croissance sans charges salariales. Vous payez uniquement sur les résultats obtenus.</p>
+          <ul class="scard-list">
+            <li>Zéro charge sociale fixe</li>
+            <li>Rémunération 100% à la commission</li>
+            <li>Scalabilité immédiate du réseau</li>
+            <li>ROI mesurable dès le premier mois</li>
+            <li>Liberté totale de collaborer</li>
+          </ul>
+        </div>
+
+        <div class="scard dark">
+          <div class="scard-icon">🎯</div>
+          <h3>Accompagnement sur-mesure</h3>
+          <p class="scard-desc">L'excellence opérationnelle au service de votre développement commercial.</p>
+          <ul class="scard-list">
+            <li>Lancement campagne en 24h</li>
+            <li>Premiers profils sous 14 jours</li>
+            <li>Assistance quotidienne par email</li>
+            <li>Recherche illimitée dans le temps</li>
+            <li>Rédaction des contrats incluse</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MÉTHODE ══ -->
+  <section id="methode" class="methode">
+    <div class="container">
+      <div class="methode-inner">
+        <div class="methode-photo reveal">
+          <img src="assets/robin.jpg" alt="Robin SalesConnect">
+          <div class="methode-photo-card">
+            <strong>Robin</strong>
+            <span>Fondateur SalesConnect</span>
+          </div>
+        </div>
+        <div class="methode-content reveal">
+          <span class="section-tag">Comment nos experts recrutent ?</span>
+          <h2 class="section-title">Une méthode éprouvée<br>depuis 6 ans</h2>
+          <p class="methode-desc">Nous ne sommes pas une simple plateforme de dépôt d'annonces. Notre segment d'indépendants est très particulier — il existe bien plus d'entreprises cherchant des agents que d'agents présents sur le marché. C'est pourquoi nous démarrons directement les agents par téléphone.</p>
+
+          <div class="methode-points">
+            <div class="methode-point">
+              <div class="methode-num">01</div>
+              <div>
+                <h4>Large choix d'agents</h4>
+                <p>Notre portefeuille contenant plusieurs milliers de profils accumulés depuis 6 ans, prêts à être contactés.</p>
+              </div>
+            </div>
+            <div class="methode-point">
+              <div class="methode-num">02</div>
+              <div>
+                <h4>Base de données public & privée</h4>
+                <p>Utilisation de LinkedIn, Monster, Indeed et bases d'État — plus de 150 000 profils potentiels.</p>
+              </div>
+            </div>
+            <div class="methode-point">
+              <div class="methode-num">03</div>
+              <div>
+                <h4>L'expertise SalesConnect</h4>
+                <p>Techniques de prospection et e-mailing propriétaires pour dénicher toujours plus d'agents qualifiés.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ OFFRE / PAGE DE VENTE ══ -->
+  <section id="offre" class="offre">
+    <div class="container">
+
+      <!-- Engagements -->
+      <div class="section-header reveal">
+        <span class="section-tag">Nos engagements</span>
+        <h2 class="section-title">Ce que SalesConnect vous garantit</h2>
+      </div>
+      <div class="engagements-grid reveal">
+        <div class="engagement-card">
+          <div class="eng-icon">⚡</div>
+          <h4>Rapidité</h4>
+          <p>Lancement de votre campagne dans les <strong>24h</strong> après réception de votre questionnaire.</p>
+        </div>
+        <div class="engagement-card">
+          <div class="eng-icon">🏅</div>
+          <h4>Qualité</h4>
+          <p>Premiers candidats transmis en moyenne durant les <strong>14 premiers jours</strong> suivant le lancement.</p>
+        </div>
+        <div class="engagement-card">
+          <div class="eng-icon">🕊️</div>
+          <h4>Liberté</h4>
+          <p>Adaptez vos critères de recherche librement — cibles, zones géographiques, secteurs.</p>
+        </div>
+        <div class="engagement-card">
+          <div class="eng-icon">💬</div>
+          <h4>Disponibilité</h4>
+          <p>Notre équipe reste à votre disposition par email pour affiner les recherches au besoin.</p>
+        </div>
+        <div class="engagement-card">
+          <div class="eng-icon">♾️</div>
+          <h4>Illimité</h4>
+          <p>Maximum de profils correspondants à vos recherches, sur une <strong>durée illimitée</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Critères de sélection -->
+      <div class="criteres reveal">
+        <div class="criteres-inner">
+          <div class="criteres-col">
+            <h3>✅ Nos agents ont :</h3>
+            <ul>
+              <li>3 à 5 ans d'expérience minimum dans votre secteur</li>
+              <li>Un réseau de professionnels établi</li>
+              <li>Une présence sur votre zone géographique cible</li>
+              <li>Un fort intérêt pour votre entreprise</li>
+            </ul>
+          </div>
+          <div class="criteres-col red">
+            <h3>❌ Nous ne proposons pas :</h3>
+            <ul>
+              <li>Profils sans réseau clientèle correspondant</li>
+              <li>Agents refusant la rémunération à la commission</li>
+              <li>Profils sans expertise dans votre domaine</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pack pricing -->
+      <div class="pricing reveal">
+        <div class="pricing-card">
+          <div class="pricing-badge">Le plus populaire</div>
+          <h3>Pack de Lancement</h3>
+          <div class="pricing-price">
+            <span class="price-amount">1 200€</span>
+            <span class="price-label">paiement unique</span>
+          </div>
+          <ul class="pricing-list">
+            <li>✅ Recrutements illimités</li>
+            <li>✅ Campagne sur durée illimitée</li>
+            <li>✅ Rédaction des contrats incluse</li>
+            <li>✅ Assistance quotidienne par email</li>
+            <li>✅ Lancement sous 24h</li>
+            <li>✅ Premiers profils sous 14 jours</li>
+            <li>✅ Période de test 3 mois par agent</li>
+          </ul>
+          <button class="pricing-btn" onclick="openCalendly(event)">
+            Lancer ma campagne →
+          </button>
+          <p class="pricing-note">+500€ TTC si vous continuez avec un agent après la période de test de 3 mois.</p>
+        </div>
+
+        <div class="pricing-steps">
+          <h3>Comment lancer votre campagne ?</h3>
+          <div class="pricing-step">
+            <div class="ps-num">1</div>
+            <div>
+              <h4>Validez le pack de lancement</h4>
+              <p>Une fois validé, vous recevrez le questionnaire avec les informations dont nos recruteurs ont besoin.</p>
+            </div>
+          </div>
+          <div class="pricing-step">
+            <div class="ps-num">2</div>
+            <div>
+              <h4>Complétez notre questionnaire</h4>
+              <p>Plusieurs questions permettront aux recruteurs de préparer le lancement de votre campagne.</p>
+            </div>
+          </div>
+          <div class="pricing-step">
+            <div class="ps-num">3</div>
+            <div>
+              <h4>Nous lançons votre campagne</h4>
+              <p>Dès réception du questionnaire, nos recruteurs lancent les recherches dans les 24h !</p>
+            </div>
+          </div>
+          <button class="pricing-btn-outline" onclick="openCalendly(event)">
+            Prendre rendez-vous d'abord →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ AVIS CLIENTS ══ -->
+  <section id="avis" class="avis">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Avis clients</span>
+        <h2 class="section-title">Ce que disent nos clients</h2>
+      </div>
+      <div class="avis-grid reveal">
+        <div class="avis-card">
+          <div class="avis-stars">★★★★★</div>
+          <p>"Nous travaillons avec le cabinet SalesConnect depuis quelques semaines seulement et nous avons signé avec 3 agents. Le suivi de la part de l'équipe est top et la qualité des profils proposés l'est tout autant. Je recommande !"</p>
+          <div class="avis-author">
+            <div class="avis-avatar">CC</div>
+            <div>
+              <strong>Cédric C.</strong>
+              <span>Flor France</span>
+            </div>
+          </div>
+        </div>
+        <div class="avis-card featured">
+          <div class="avis-stars">★★★★★</div>
+          <p>"Je travaille avec le cabinet SalesConnect depuis quelques mois et j'en suis très satisfaite ! Les recruteurs sont disponibles, réactifs et à l'écoute ! Ils ont parfaitement su cerner mes attentes pour me proposer des agents commerciaux performants. Je recommande sans hésitation !"</p>
+          <div class="avis-author">
+            <div class="avis-avatar">AM</div>
+            <div>
+              <strong>Anaïs M.</strong>
+              <span>La Marco</span>
+            </div>
+          </div>
+        </div>
+        <div class="avis-card">
+          <div class="avis-stars">★★★★★</div>
+          <p>"Merci Robin et l'équipe SalesConnect pour la campagne de recrutement rapidement mise en place, et la qualité des profils sélectionnés…"</p>
+          <div class="avis-author">
+            <div class="avis-avatar">SM</div>
+            <div>
+              <strong>Séverine M.</strong>
+              <span>Oréa Production</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="faq-left reveal">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Questions fréquentes</h2>
+          <p>Tout ce que vous devez savoir sur notre cabinet et notre fonctionnement.</p>
+          <button class="btn-outline" onclick="openCalendly(event)">Une autre question ?</button>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item open">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Puis-je collaborer avec les agents que je souhaite ?
+              <div class="faq-toggle">+</div>
+            </div>
+            <div class="faq-answer">En effet, une fois votre campagne lancée, vous pourrez choisir librement les agents avec lesquels vous souhaitez collaborer !</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Que signifie la période de test ?
+              <div class="faq-toggle">+</div>
+            </div>
+            <div class="faq-answer">Une fois que vous commencerez à collaborer avec un agent, nous vous proposons une période de test de 3 mois qui vous permettra de valider ou non l'agent commercial.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Comment continuer avec un agent après la période d'essai ?
+              <div class="faq-toggle">+</div>
+            </div>
+            <div class="faq-answer">Si vous souhaitez continuer avec un agent commercial à l'issue de la période de test, nous vous facturerons des frais de recrutement à hauteur de 500€ TTC.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Que faire si je ne souhaite plus collaborer avec un agent ?
+              <div class="faq-toggle">+</div>
+            </div>
+            <div class="faq-answer">Aucun souci ! Si vous ne souhaitez pas continuer avec un agent à l'issue des 3 mois, faites-le nous savoir et nous ne procèderons à aucune facturation.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Combien de temps dure la campagne de recrutement ?
+              <div class="faq-toggle">+</div>
+            </div>
+            <div class="faq-answer">La campagne est illimitée dans le temps. Nous continuons à chercher des profils correspondant à vos critères jusqu'à ce que vous soyez pleinement satisfait.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA FINAL ══ -->
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-final-inner reveal">
+        <span class="section-tag">Passez à l'action</span>
+        <h2>Prêt à lancer votre campagne<br>de recrutement ?</h2>
+        <p>Rejoignez les entreprises qui nous font confiance pour recruter leurs agents performants. Premiers profils sous 14 jours.</p>
+        <button class="hero-btn" onclick="openCalendly(event)">
+          📅 Prendre rendez-vous gratuitement
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="SalesConnect" class="footer-logo">
+          <p>Cabinet de recrutement spécialisé dans le placement d'agents commerciaux indépendants rémunérés à la commission.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#services">Nos services</a>
+          <a href="#methode">Notre méthode</a>
+          <a href="#offre">Notre offre</a>
+          <a href="#avis">Avis clients</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@salesconnect.fr">contact@salesconnect.fr</a>
+          <a href="https://calendly.com/salesconnect/30min" target="_blank">Prendre rendez-vous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 SalesConnect. Tous droits réservés.</p>
+        <p>Mentions légales · Politique de confidentialité</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
