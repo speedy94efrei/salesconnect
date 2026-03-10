@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SalesConnect — Lancez votre campagne de recrutement d'agents commerciaux.">
+<title>SalesConnect — Lancez votre campagne</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blue: #00a3ee;
+  --blue-dark: #0082c4;
+  --navy: #0a1628;
+  --white: #ffffff;
+  --offwhite: #f4f7fb;
+  --gray: #e2e8f0;
+  --text: #1a2035;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border: #e2e8f0;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--navy);
+  padding: 14px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.topbar-logo img { height: 44px; object-fit: contain; filter: brightness(10); }
+.topbar-btn {
+  background: var(--blue); color: white; border: none; cursor: pointer;
+  font-family: 'Montserrat', sans-serif; font-size: 0.88rem; font-weight: 700;
+  padding: 12px 28px; border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(0,163,238,0.4);
+  transition: all 0.2s; text-decoration: none; display: inline-block;
+}
+.topbar-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+/* ── HERO VENTE ── */
+.hero-vente {
+  background: linear-gradient(135deg, #060e1e 0%, #0a1628 100%);
+  padding: 80px 40px; text-align: center; position: relative; overflow: hidden;
+}
+.hero-vente::before { content:''; position:absolute; top:-30%; left:50%; transform:translateX(-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(0,163,238,0.1) 0%,transparent 70%); pointer-events:none; }
+.hero-vente-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.hero-vente img.logo { height: 80px; object-fit: contain; margin-bottom: 32px; }
+.hero-vente .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; display: block; }
+.hero-vente h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: white; line-height: 1.15; margin-bottom: 20px; }
+.hero-vente h1 span { color: var(--blue); }
+.hero-vente p { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.btn-primary { background: var(--blue); color: white; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; padding: 18px 52px; border-radius: 50px; box-shadow: 0 8px 32px rgba(0,163,238,0.5); transition: all 0.2s; display: inline-block; text-decoration: none; letter-spacing: 0.02em; }
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-3px); box-shadow: 0 14px 44px rgba(0,163,238,0.65); }
+
+/* ── SECTION COMMUNE ── */
+.section { padding: 90px 0; }
+.section.gray { background: var(--offwhite); }
+.section.dark { background: linear-gradient(135deg, #060e1e, #0a1628); }
+.section-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: block; }
+.section-title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; line-height: 1.2; color: var(--navy); margin-bottom: 16px; }
+.section-title.white { color: white; }
+.section-center { text-align: center; margin-bottom: 56px; }
+.section-sub { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; max-width: 600px; margin: 0 auto; }
+.section-sub.white { color: rgba(255,255,255,0.55); }
+
+/* ── RAPPEL OFFRE ── */
+.offre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.offre-card { border-radius: 20px; padding: 36px; }
+.offre-card.green { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.offre-card.red { background: #fff5f5; border: 1px solid #fed7d7; }
+.offre-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 20px; }
+.offre-card.green h3 { color: #15803d; }
+.offre-card.red h3 { color: #c53030; }
+.offre-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.offre-card ul li { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
+.offre-card ul li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.offre-card.green ul li::before { background: #22c55e; }
+.offre-card.red ul li::before { background: #ef4444; }
+
+/* ── MÉTHODE ── */
+.methode-intro { font-size: 1rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 48px; max-width: 780px; margin-left: auto; margin-right: auto; text-align: center; }
+.methode-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 48px; }
+.methode-card { background: linear-gradient(145deg, #0f2040, #0a1628); border-radius: 20px; padding: 36px 28px; }
+.methode-card-icon { width: 52px; height: 52px; border-radius: 12px; background: rgba(0,163,238,0.15); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+.methode-card h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: white; margin-bottom: 10px; }
+.methode-card p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.methode-cta { text-align: center; }
+
+/* ── ENGAGEMENTS ── */
+.eng-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.eng-card { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 28px 20px; text-align: center; transition: all 0.25s; }
+.eng-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,163,238,0.1); border-color: rgba(0,163,238,0.3); }
+.eng-icon { font-size: 2rem; margin-bottom: 14px; }
+.eng-card h4 { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.eng-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+.eng-card strong { color: var(--blue); }
+
+/* ── ÉTAPES ── */
+.steps-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.step-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 36px; position: relative; overflow: hidden; transition: all 0.25s; }
+.step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,163,238,0.1); }
+.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--blue), #33b8f2); }
+.step-num { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+.step-card h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.step-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+/* ── PRICING ── */
+.pricing-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: start; }
+.pricing-card {
+  background: linear-gradient(145deg, #0f2040, #0a1628);
+  border-radius: 24px; padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(10,22,40,0.5);
+  position: relative; overflow: hidden;
+}
+.pricing-card::before { content:''; position:absolute; top:-40%; right:-20%; width:300px; height:300px; background:radial-gradient(circle,rgba(0,163,238,0.15) 0%,transparent 70%); pointer-events:none; }
+.pricing-badge { display: inline-block; background: var(--blue); color: white; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 16px; border-radius: 50px; margin-bottom: 24px; }
+.pricing-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 24px; }
+.price-amount { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 900; color: var(--blue); display: block; line-height: 1; }
+.price-label { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-top: 6px; display: block; margin-bottom: 32px; }
+.pricing-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+.pricing-list li { font-size: 0.92rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
+.pricing-btn { width: 100%; background: var(--blue); color: white; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; padding: 18px; border-radius: 50px; box-shadow: 0 6px 24px rgba(0,163,238,0.4); transition: all 0.2s; margin-bottom: 16px; }
+.pricing-btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
+.pricing-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.6; }
+.pricing-steps-box { background: var(--offwhite); border: 1px solid var(--border); border-radius: 24px; padding: 40px; }
+.pricing-steps-box h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 32px; }
+.p-step { display: flex; gap: 18px; margin-bottom: 28px; align-items: flex-start; }
+.p-step-num { width: 40px; height: 40px; flex-shrink: 0; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; color: white; font-size: 0.9rem; }
+.p-step h4 { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.p-step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+.btn-outline { width: 100%; background: transparent; color: var(--blue); border: 2px solid var(--blue); cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; padding: 16px; border-radius: 50px; transition: all 0.2s; margin-top: 8px; }
+.btn-outline:hover { background: var(--blue); color: white; }
+
+/* ── AVIS ── */
+.avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.avis-card { background: var(--offwhite); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: all 0.25s; }
+.avis-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+.avis-card.featured { background: linear-gradient(145deg, #0f2040, #0a1628); border-color: transparent; }
+.avis-card.featured p { color: rgba(255,255,255,0.75) !important; }
+.avis-card.featured .avis-author strong { color: white !important; }
+.avis-card.featured .avis-author span { color: rgba(255,255,255,0.5) !important; }
+.avis-stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
+.avis-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+.avis-author { display: flex; align-items: center; gap: 12px; }
+.avis-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 800; color: white; flex-shrink: 0; }
+.avis-author strong { font-family: 'Montserrat', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--navy); display: block; }
+.avis-author span { font-size: 0.78rem; color: var(--text-light); }
+
+/* ── FAQ ── */
+.faq-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+.faq-left h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+.faq-left p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); gap: 16px; transition: color 0.2s; user-select: none; }
+.faq-question:hover { color: var(--blue); }
+.faq-toggle { width: 30px; height: 30px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-muted); transition: all 0.3s; }
+.faq-item.open .faq-toggle { background: var(--blue); border-color: var(--blue); color: white; transform: rotate(45deg); }
+.faq-answer { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; }
+.faq-item.open .faq-answer { max-height: 200px; padding-bottom: 22px; }
+
+/* ── CTA FINAL ── */
+.cta-final { padding: 100px 0; background: linear-gradient(135deg, #060e1e, #0a1628); text-align: center; position: relative; overflow: hidden; }
+.cta-final::before { content:''; position:absolute; top:-30%; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(0,163,238,0.12) 0%,transparent 70%); pointer-events:none; }
+.cta-final-inner { position: relative; z-index: 1; }
+.cta-final .tag { color: rgba(255,255,255,0.4); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+.cta-final h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.2; }
+.cta-final p { font-size: 1rem; color: rgba(255,255,255,0.55); margin-bottom: 44px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer { background: #040c18; padding: 48px 0 28px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 28px; }
+.footer-inner img { height: 44px; filter: brightness(10); opacity: 0.7; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { color: rgba(255,255,255,0.45); font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--blue); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; text-align: center; }
+.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.22); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease,transform 0.75s ease; }
+.reveal.visible { opacity:1; transform:none; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .container { padding: 0 24px; }
+  .offre-grid,.methode-cards,.eng-grid,.steps-wrap,.pricing-wrap,.avis-grid,.faq-inner { grid-template-columns: 1fr; }
+  .section { padding: 64px 0; }
+  .topbar { padding: 14px 24px; }
+}
+@media(max-width:480px){
+  .hero-vente h1 { font-size: 1.8rem; }
+  .price-amount { font-size: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOPBAR ── -->
+<header class="topbar">
+  <a href="index.html" class="topbar-logo">
+    <img src="assets/logo.png" alt="SalesConnect">
+  </a>
+  <button class="topbar-btn" onclick="openCalendly(event)">📅 Lancer ma campagne</button>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero-vente">
+  <div class="hero-vente-inner">
+    <img src="assets/logo.png" alt="SalesConnect" class="logo">
+    <span class="tag">Salesconnect — Cabinet de recrutement</span>
+    <h1>Suite à notre échange,<br>vous n'êtes qu'à <span>quelques minutes</span><br>de lancer votre campagne de recrutement…</h1>
+    <p>Avant que nous démarrions ensemble, nous souhaitons vous récapituler tous les points importants à notre bonne collaboration !</p>
+    <button class="btn-primary" onclick="openCalendly(event)">🚀 Lancer ma campagne</button>
+  </div>
+</section>
+
+<!-- ── RAPPEL OFFRE ── -->
+<section class="section gray">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-tag">Rappel de notre offre</span>
+      <h2 class="section-title">Critères de sélection de nos agents</h2>
+    </div>
+    <div class="offre-grid reveal">
+      <div class="offre-card green">
+        <h3>✅ Nos agents doivent :</h3>
+        <ul>
+          <li>Posséder 3 à 5 ans d'expérience minimum dans votre secteur ou complémentaire</li>
+          <li>Détenir un réseau de professionnels établi à mettre à disposition de votre entreprise</li>
+          <li>Être basé sur la zone géographique que vous souhaitez cibler</li>
+          <li>Montrer un fort intérêt pour en savoir plus concernant votre entreprise</li>
+        </ul>
+      </div>
+      <div class="offre-card red">
+        <h3>❌ Nous ne proposons pas si l'agent :</h3>
+        <ul>
+          <li>Ne possède pas un réseau de clientèle correspondant à votre cible</li>
+          <li>Ne souhaite pas être rémunéré uniquement à la commission</li>
+          <li>Ne possède pas suffisamment d'expertise dans votre domaine d'activité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MÉTHODE ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-tag">Comment nos experts recrutent ?</span>
+      <h2 class="section-title">Notre méthode depuis 6 ans</h2>
+    </div>
+    <p class="methode-intro reveal">
+      Depuis ces six dernières années, nos experts du recrutement chez SalesConnect ont mis en place un nombre important de stratégies afin de trouver les meilleurs profils d'agents commerciaux adaptés aux besoins de nos partenaires !<br><br>
+      Il est important de rappeler que nous ne sommes pas une simple plateforme de dépôt d'annonces. Comme vous le savez, notre segment d'indépendants est très particulier — il existe un nombre infiniment plus important d'entreprises étant à la recherche d'agents, que d'agents présents sur le marché. De ce fait, il est primordial de démarcher les agents directement par téléphone.
+    </p>
+    <div class="methode-cards reveal">
+      <div class="methode-card">
+        <div class="methode-card-icon">📋</div>
+        <h4>Large choix d'agents</h4>
+        <p>Notre portefeuille d'agents commerciaux indépendants contient plusieurs milliers de profils accumulés depuis 6 ans, prêts à être contactés.</p>
+      </div>
+      <div class="methode-card">
+        <div class="methode-card-icon">🗄️</div>
+        <h4>Base de données public & privée</h4>
+        <p>Utilisation de différentes bases d'État, LinkedIn, Monster, Indeed… composées de plus de 150 000 profils potentiels.</p>
+      </div>
+      <div class="methode-card">
+        <div class="methode-card-icon">🎯</div>
+        <h4>L'expertise SalesConnect</h4>
+        <p>Méthodes et techniques de prospection & d'e-mailing propriétaires pour dénicher toujours plus d'agents commerciaux indépendants.</p>
+      </div>
+    </div>
+    <div class="methode-cta reveal">
+      <button class="btn-primary" onclick="openCalendly(event)">🚀 Lancer ma campagne</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENGAGEMENTS ── -->
+<section class="section gray">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-tag">Nos engagements SalesConnect</span>
+      <h2 class="section-title">Ce que nous vous garantissons</h2>
+    </div>
+    <div class="eng-grid reveal">
+      <div class="eng-card">
+        <div class="eng-icon">⚡</div>
+        <h4>Rapidité</h4>
+        <p>Lancement de votre campagne dans les <strong>24h</strong> après réception de votre questionnaire.</p>
+      </div>
+      <div class="eng-card">
+        <div class="eng-icon">🏅</div>
+        <h4>Qualité</h4>
+        <p>Premiers candidats transmis en moyenne durant les <strong>14 premiers jours</strong> suivant le lancement.</p>
+      </div>
+      <div class="eng-card">
+        <div class="eng-icon">🕊️</div>
+        <h4>Liberté</h4>
+        <p>Adaptez vos critères de recherche librement — cibles, zones géographiques, secteurs.</p>
+      </div>
+      <div class="eng-card">
+        <div class="eng-icon">💬</div>
+        <h4>Disponibilité</h4>
+        <p>Notre équipe reste à votre disposition par email pour affiner les recherches au besoin.</p>
+      </div>
+      <div class="eng-card">
+        <div class="eng-icon">♾️</div>
+        <h4>Illimité</h4>
+        <p>Maximum de profils correspondants à vos recherches, sur une <strong>durée illimitée</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ÉTAPES + PRICING ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-tag">Comment lancer votre campagne ?</span>
+      <h2 class="section-title">3 étapes simples</h2>
+    </div>
+    <div class="steps-wrap reveal" style="margin-bottom:80px">
+      <div class="step-card">
+        <div class="step-num">Étape N°1</div>
+        <h4>Validez le pack de lancement</h4>
+        <p>Une fois validé, vous recevrez le questionnaire contenant les informations dont nos recruteurs ont besoin pour démarrer.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Étape N°2</div>
+        <h4>Complétez notre questionnaire</h4>
+        <p>Plusieurs questions vous seront posées afin de permettre aux recruteurs de préparer le lancement de votre campagne.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Étape N°3</div>
+        <h4>Nous lançons votre campagne</h4>
+        <p>Dès réception du questionnaire, nos recruteurs lanceront les recherches dans les 24h !</p>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="pricing-wrap reveal">
+      <div class="pricing-card">
+        <div class="pricing-badge">🔥 Le plus populaire</div>
+        <h3>Pack de Lancement</h3>
+        <span class="price-amount">1 200€</span>
+        <span class="price-label">paiement unique · sans abonnement</span>
+        <ul class="pricing-list">
+          <li>✅ Nombre de candidats et recrutements en illimité</li>
+          <li>✅ Campagne sur une période de temps illimitée</li>
+          <li>✅ Rédaction des contrats</li>
+          <li>✅ Assistance au quotidien par e-mail</li>
+        </ul>
+        <button class="pricing-btn" onclick="openCalendly(event)">🚀 Lancer ma campagne →</button>
+        <p class="pricing-note">+500€ TTC si vous continuez avec un agent à l'issue de la période de test de 3 mois. Aucune facturation si vous ne souhaitez pas continuer.</p>
+      </div>
+      <div class="pricing-steps-box">
+        <h3>Prendre rendez-vous d'abord ?</h3>
+        <div class="p-step">
+          <div class="p-step-num">1</div>
+          <div><h4>Réservez un créneau</h4><p>Choisissez une date et un horaire qui vous convient via notre calendrier en ligne.</p></div>
+        </div>
+        <div class="p-step">
+          <div class="p-step-num">2</div>
+          <div><h4>Échangeons ensemble</h4><p>Nous prenons le temps de comprendre votre besoin, votre secteur et vos attentes.</p></div>
+        </div>
+        <div class="p-step">
+          <div class="p-step-num">3</div>
+          <div><h4>Lancement immédiat</h4><p>Dès validation, la campagne est lancée dans les 24h suivant la réception du questionnaire.</p></div>
+        </div>
+        <button class="btn-outline" onclick="openCalendly(event)">📅 Prendre rendez-vous d'abord →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AVIS CLIENTS ── -->
+<section class="section gray">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-tag">Avis clients</span>
+      <h2 class="section-title">Ce que disent nos clients</h2>
+    </div>
+    <div class="avis-grid reveal">
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p>"Nous travaillons avec le cabinet SalesConnect depuis quelques semaines seulement et nous avons signé avec 3 agents. Le suivi de la part de l'équipe est top et la qualité des profils proposés l'est tout autant. Je recommande !"</p>
+        <div class="avis-author">
+          <div class="avis-avatar">CC</div>
+          <div><strong>Cédric C.</strong><span>Flor France</span></div>
+        </div>
+      </div>
+      <div class="avis-card featured">
+        <div class="avis-stars">★★★★★</div>
+        <p>"Je travaille avec le cabinet SalesConnect depuis quelques mois et j'en suis très satisfaite ! Les recruteurs sont disponibles, réactifs et à l'écoute ! Ils ont parfaitement su cerner mes attentes pour me proposer des agents commerciaux performants. Je recommande sans hésitation !"</p>
+        <div class="avis-author">
+          <div class="avis-avatar">AM</div>
+          <div><strong>Anaïs M.</strong><span>La Marco</span></div>
+        </div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p>"Merci Robin et l'équipe SalesConnect pour la campagne de recrutement rapidement mise en place, et la qualité des profils sélectionnés…"</p>
+        <div class="avis-author">
+          <div class="avis-avatar">SM</div>
+          <div><strong>Séverine M.</strong><span>Oréa Production</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-left reveal">
+        <span class="section-tag">FAQ</span>
+        <h2>Les questions fréquentes</h2>
+        <p>Tout ce que vous devez savoir avant de lancer votre campagne de recrutement.</p>
+        <button class="btn-primary" style="margin-top:8px" onclick="openCalendly(event)">Une autre question ?</button>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">Puis-je collaborer avec les agents que je souhaite ?<div class="faq-toggle">+</div></div>
+          <div class="faq-answer">En effet, une fois votre campagne de recrutement lancée, vous pourrez choisir les agents avec lesquels vous souhaitez collaborer !</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Que signifie la période de test ?<div class="faq-toggle">+</div></div>
+          <div class="faq-answer">Une fois que vous commencerez à collaborer avec un agent, nous vous proposons une période de test de 3 mois qui vous permettra de valider ou non l'agent commercial.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Comment continuer avec un agent au-delà de la période d'essai ?<div class="faq-toggle">+</div></div>
+          <div class="faq-answer">Si vous souhaitez continuer avec un agent commercial à l'issue de la période de test, nous vous facturerons des frais de recrutement à hauteur de 500€ TTC.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Que faire si je ne souhaite plus collaborer avec un agent ?<div class="faq-toggle">+</div></div>
+          <div class="faq-answer">Aucun souci ! Si vous ne souhaitez pas continuer au côté d'un agent commercial à l'issue des 3 mois, faites-le nous savoir et nous ne procèderons à aucune facturation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ── -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-final-inner reveal">
+      <span class="tag">Passez à l'action</span>
+      <h2>Prêt à lancer votre campagne<br>de recrutement ?</h2>
+      <p>Premiers profils sous 14 jours. Campagne illimitée. Zéro charge fixe.</p>
+      <button class="btn-primary" onclick="openCalendly(event)">🚀 Lancer ma campagne maintenant</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <img src="assets/logo.png" alt="SalesConnect">
+      <div class="footer-links">
+        <a href="index.html">Retour au site</a>
+        <a href="mailto:contact@salesconnect.fr">contact@salesconnect.fr</a>
+        <a href="https://calendly.com/salesconnect/30min" target="_blank">Prendre RDV</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SalesConnect. Tous droits réservés. · Mentions légales · Politique de confidentialité</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const CALENDLY_URL = 'https://calendly.com/salesconnect/30min';
+function openCalendly(e) { if(e) e.preventDefault(); Calendly.initPopupWidget({ url: CALENDLY_URL }); }
+function toggleFaq(el) { const item=el.parentElement; const open=item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open')); if(!open) item.classList.add('open'); }
+const obs = new IntersectionObserver((entries) => { entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); } }); }, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
