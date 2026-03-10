@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SalesConnect — Cabinet de recrutement d'agents commerciaux indépendants rémunérés à la commission.">
 <title>SalesConnect — Recrutez des agents commerciaux performants</title>
-<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.jpg">
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- Calendly -->
@@ -22,7 +22,7 @@
     <div class="sn-links">
       <a href="#services">Nos services</a>
       <a href="#methode">Méthode</a>
-      <a href="#offre">Notre offre</a>
+      
       <a href="#avis">Avis clients</a>
       <a href="#faq">FAQ</a>
       <a href="#rdv" class="sn-cta" onclick="openCalendly(event)">Prendre RDV</a>
@@ -34,7 +34,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="toggleMenu()">Nos services</a>
     <a href="#methode" onclick="toggleMenu()">Méthode</a>
-    <a href="#offre" onclick="toggleMenu()">Notre offre</a>
+    
     <a href="#avis" onclick="toggleMenu()">Avis clients</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
     <a href="#rdv" class="mobile-cta" onclick="openCalendly(event)">Prendre RDV</a>
@@ -70,7 +70,10 @@
       </div>
     </div>
 
-   
+    <div class="scroll-indicator">
+      <span>Découvrir</span>
+      <div class="arrow-down"></div>
+    </div>
   </section>
 
   <!-- ══ SERVICES / CARDS ══ -->
@@ -170,121 +173,7 @@
     </div>
   </section>
 
-  <!-- ══ OFFRE / PAGE DE VENTE ══ -->
-  <section id="offre" class="offre">
-    <div class="container">
 
-      <!-- Engagements -->
-      <div class="section-header reveal">
-        <span class="section-tag">Nos engagements</span>
-        <h2 class="section-title">Ce que SalesConnect vous garantit</h2>
-      </div>
-      <div class="engagements-grid reveal">
-        <div class="engagement-card">
-          <div class="eng-icon">⚡</div>
-          <h4>Rapidité</h4>
-          <p>Lancement de votre campagne dans les <strong>24h</strong> après réception de votre questionnaire.</p>
-        </div>
-        <div class="engagement-card">
-          <div class="eng-icon">🏅</div>
-          <h4>Qualité</h4>
-          <p>Premiers candidats transmis en moyenne durant les <strong>14 premiers jours</strong> suivant le lancement.</p>
-        </div>
-        <div class="engagement-card">
-          <div class="eng-icon">🕊️</div>
-          <h4>Liberté</h4>
-          <p>Adaptez vos critères de recherche librement — cibles, zones géographiques, secteurs.</p>
-        </div>
-        <div class="engagement-card">
-          <div class="eng-icon">💬</div>
-          <h4>Disponibilité</h4>
-          <p>Notre équipe reste à votre disposition par email pour affiner les recherches au besoin.</p>
-        </div>
-        <div class="engagement-card">
-          <div class="eng-icon">♾️</div>
-          <h4>Illimité</h4>
-          <p>Maximum de profils correspondants à vos recherches, sur une <strong>durée illimitée</strong>.</p>
-        </div>
-      </div>
-
-      <!-- Critères de sélection -->
-      <div class="criteres reveal">
-        <div class="criteres-inner">
-          <div class="criteres-col">
-            <h3>✅ Nos agents ont :</h3>
-            <ul>
-              <li>3 à 5 ans d'expérience minimum dans votre secteur</li>
-              <li>Un réseau de professionnels établi</li>
-              <li>Une présence sur votre zone géographique cible</li>
-              <li>Un fort intérêt pour votre entreprise</li>
-            </ul>
-          </div>
-          <div class="criteres-col red">
-            <h3>❌ Nous ne proposons pas :</h3>
-            <ul>
-              <li>Profils sans réseau clientèle correspondant</li>
-              <li>Agents refusant la rémunération à la commission</li>
-              <li>Profils sans expertise dans votre domaine</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pack pricing -->
-      <div class="pricing reveal">
-        <div class="pricing-card">
-          <div class="pricing-badge">Le plus populaire</div>
-          <h3>Pack de Lancement</h3>
-          <div class="pricing-price">
-            <span class="price-amount">1 200€</span>
-            <span class="price-label">paiement unique</span>
-          </div>
-          <ul class="pricing-list">
-            <li>✅ Recrutements illimités</li>
-            <li>✅ Campagne sur durée illimitée</li>
-            <li>✅ Rédaction des contrats incluse</li>
-            <li>✅ Assistance quotidienne par email</li>
-            <li>✅ Lancement sous 24h</li>
-            <li>✅ Premiers profils sous 14 jours</li>
-            <li>✅ Période de test 3 mois par agent</li>
-          </ul>
-          <button class="pricing-btn" onclick="openCalendly(event)">
-            Lancer ma campagne →
-          </button>
-          <p class="pricing-note">+500€ TTC si vous continuez avec un agent après la période de test de 3 mois.</p>
-        </div>
-
-        <div class="pricing-steps">
-          <h3>Comment lancer votre campagne ?</h3>
-          <div class="pricing-step">
-            <div class="ps-num">1</div>
-            <div>
-              <h4>Validez le pack de lancement</h4>
-              <p>Une fois validé, vous recevrez le questionnaire avec les informations dont nos recruteurs ont besoin.</p>
-            </div>
-          </div>
-          <div class="pricing-step">
-            <div class="ps-num">2</div>
-            <div>
-              <h4>Complétez notre questionnaire</h4>
-              <p>Plusieurs questions permettront aux recruteurs de préparer le lancement de votre campagne.</p>
-            </div>
-          </div>
-          <div class="pricing-step">
-            <div class="ps-num">3</div>
-            <div>
-              <h4>Nous lançons votre campagne</h4>
-              <p>Dès réception du questionnaire, nos recruteurs lancent les recherches dans les 24h !</p>
-            </div>
-          </div>
-          <button class="pricing-btn-outline" onclick="openCalendly(event)">
-            Prendre rendez-vous d'abord →
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ══ AVIS CLIENTS ══ -->
   <section id="avis" class="avis">
@@ -408,7 +297,7 @@
           <h4>Navigation</h4>
           <a href="#services">Nos services</a>
           <a href="#methode">Notre méthode</a>
-          <a href="#offre">Notre offre</a>
+          
           <a href="#avis">Avis clients</a>
           <a href="#faq">FAQ</a>
         </div>
