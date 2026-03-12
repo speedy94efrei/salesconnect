@@ -208,7 +208,7 @@ footer { background: #040c18; padding: 48px 0 28px; }
 <!-- ── TOPBAR ── -->
 <header class="topbar">
   <a href="index.html" class="topbar-logo">
-    <img src="assets/logo.png" alt="SalesConnect">
+    <img src="assets/logo_white.png" alt="SalesConnect">
   </a>
   <button class="topbar-btn" onclick="openCalendly(event)">📅 Lancer ma campagne</button>
 </header>
@@ -216,9 +216,9 @@ footer { background: #040c18; padding: 48px 0 28px; }
 <!-- ── HERO ── -->
 <section class="hero-vente">
   <div class="hero-vente-inner">
-    <img src="assets/logo.png" alt="SalesConnect" class="logo">
+    <img src="assets/logo_white.png" alt="SalesConnect" class="logo">
     <span class="tag">Salesconnect — Cabinet de recrutement</span>
-    <h1>Suite à notre échange,<br>vous n'êtes qu'à <span>quelques minutes</span><br>de lancer votre campagne de recrutement…</h1>
+    <h1>Suite à notre échange, vous n'êtes<br>qu'à <span>quelques minutes</span> de lancer<br>votre campagne de recrutement…</h1>
     <p>Avant que nous démarrions ensemble, nous souhaitons vous récapituler tous les points importants à notre bonne collaboration !</p>
     <button class="btn-primary" onclick="openCalendly(event)">🚀 Lancer ma campagne</button>
   </div>
@@ -349,7 +349,7 @@ footer { background: #040c18; padding: 48px 0 28px; }
       </div>
     </div>
 
-    <!-- PRICING -->
+    <!-- PRICING + FAQ côte à côte -->
     <div class="pricing-wrap reveal">
       <div class="pricing-card">
         <div class="pricing-badge">🔥 Le plus populaire</div>
@@ -365,21 +365,28 @@ footer { background: #040c18; padding: 48px 0 28px; }
         <button class="pricing-btn" onclick="openCalendly(event)">🚀 Lancer ma campagne →</button>
         <p class="pricing-note">+500€ TTC si vous continuez avec un agent à l'issue de la période de test de 3 mois. Aucune facturation si vous ne souhaitez pas continuer.</p>
       </div>
+      <!-- FAQ à droite -->
       <div class="pricing-steps-box">
-        <h3>Prendre rendez-vous d'abord ?</h3>
-        <div class="p-step">
-          <div class="p-step-num">1</div>
-          <div><h4>Réservez un créneau</h4><p>Choisissez une date et un horaire qui vous convient via notre calendrier en ligne.</p></div>
+        <h3 style="margin-bottom:8px">Les questions fréquentes</h3>
+        <p style="font-size:0.85rem;color:#64748b;margin-bottom:24px">Tout ce que vous devez savoir avant de lancer.</p>
+        <div class="faq-list">
+          <div class="faq-item open">
+            <div class="faq-question" onclick="toggleFaq(this)">Puis-je collaborer avec les agents que je souhaite ?<div class="faq-toggle">+</div></div>
+            <div class="faq-answer">En effet, une fois votre campagne lancée, vous pourrez choisir librement les agents avec lesquels vous souhaitez collaborer !</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Que signifie la période de test ?<div class="faq-toggle">+</div></div>
+            <div class="faq-answer">Une fois que vous commencerez à collaborer avec un agent, nous vous proposons une période de test de 3 mois pour valider ou non l'agent commercial.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Comment continuer au-delà de la période d'essai ?<div class="faq-toggle">+</div></div>
+            <div class="faq-answer">Si vous souhaitez continuer avec un agent à l'issue de la période de test, nous vous facturerons des frais de recrutement à hauteur de 500€ TTC.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Que faire si je ne souhaite plus collaborer avec un agent ?<div class="faq-toggle">+</div></div>
+            <div class="faq-answer">Aucun souci ! Faites-le nous savoir à l'issue des 3 mois et nous ne procèderons à aucune facturation.</div>
+          </div>
         </div>
-        <div class="p-step">
-          <div class="p-step-num">2</div>
-          <div><h4>Échangeons ensemble</h4><p>Nous prenons le temps de comprendre votre besoin, votre secteur et vos attentes.</p></div>
-        </div>
-        <div class="p-step">
-          <div class="p-step-num">3</div>
-          <div><h4>Lancement immédiat</h4><p>Dès validation, la campagne est lancée dans les 24h suivant la réception du questionnaire.</p></div>
-        </div>
-        <button class="btn-outline" onclick="openCalendly(event)">📅 Prendre rendez-vous d'abord →</button>
       </div>
     </div>
   </div>
@@ -421,38 +428,6 @@ footer { background: #040c18; padding: 48px 0 28px; }
   </div>
 </section>
 
-<!-- ── FAQ ── -->
-<section class="section">
-  <div class="container">
-    <div class="faq-inner">
-      <div class="faq-left reveal">
-        <span class="section-tag">FAQ</span>
-        <h2>Les questions fréquentes</h2>
-        <p>Tout ce que vous devez savoir avant de lancer votre campagne de recrutement.</p>
-        <button class="btn-primary" style="margin-top:8px" onclick="openCalendly(event)">Une autre question ?</button>
-      </div>
-      <div class="faq-list reveal">
-        <div class="faq-item open">
-          <div class="faq-question" onclick="toggleFaq(this)">Puis-je collaborer avec les agents que je souhaite ?<div class="faq-toggle">+</div></div>
-          <div class="faq-answer">En effet, une fois votre campagne de recrutement lancée, vous pourrez choisir les agents avec lesquels vous souhaitez collaborer !</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">Que signifie la période de test ?<div class="faq-toggle">+</div></div>
-          <div class="faq-answer">Une fois que vous commencerez à collaborer avec un agent, nous vous proposons une période de test de 3 mois qui vous permettra de valider ou non l'agent commercial.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">Comment continuer avec un agent au-delà de la période d'essai ?<div class="faq-toggle">+</div></div>
-          <div class="faq-answer">Si vous souhaitez continuer avec un agent commercial à l'issue de la période de test, nous vous facturerons des frais de recrutement à hauteur de 500€ TTC.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">Que faire si je ne souhaite plus collaborer avec un agent ?<div class="faq-toggle">+</div></div>
-          <div class="faq-answer">Aucun souci ! Si vous ne souhaitez pas continuer au côté d'un agent commercial à l'issue des 3 mois, faites-le nous savoir et nous ne procèderons à aucune facturation.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── CTA FINAL ── -->
 <section class="cta-final">
   <div class="container">
@@ -469,7 +444,7 @@ footer { background: #040c18; padding: 48px 0 28px; }
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <img src="assets/logo.png" alt="SalesConnect">
+      <img src="assets/logo_white.png" alt="SalesConnect">
       <div class="footer-links">
         <a href="index.html">Retour au site</a>
         <a href="mailto:contact@salesconnect.fr">contact@salesconnect.fr</a>
@@ -477,7 +452,7 @@ footer { background: #040c18; padding: 48px 0 28px; }
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 SalesConnect. Tous droits réservés. · Mentions légales · Politique de confidentialité</p>
+      <p>© 2026 SalesConnect. Tous droits réservés. · <a href="mentions-legales.html" style="color:rgba(255,255,255,0.35);text-decoration:none">Mentions légales</a> · <a href="politique-confidentialite.html" style="color:rgba(255,255,255,0.35);text-decoration:none">Politique de confidentialité</a></p>
     </div>
   </div>
 </footer>
