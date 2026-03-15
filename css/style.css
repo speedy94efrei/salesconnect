@@ -34,7 +34,7 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var
   display: flex; justify-content: space-between; align-items: center;
   padding: 14px 48px;
   background: rgba(10,22,40,0.97); backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+  box-shadow: none;
   transform: translateY(-100%); transition: transform 0.3s ease;
 }
 .sticky-nav.visible { transform: translateY(0); }
@@ -381,3 +381,4 @@ footer { background: #040c18; padding: 64px 0 32px; }
   .engagements-grid { grid-template-columns:1fr; }
   .hero h1 { font-size:2.2rem; }
 }
+.sticky-nav { border: none !important; outline: none !important; }

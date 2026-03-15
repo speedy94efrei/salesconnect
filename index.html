@@ -17,12 +17,12 @@
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,14,30,0.78) 0%,rgba(8,18,38,0.85) 50%,rgba(6,14,30,0.93) 100%);}
 .hero-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:860px;width:100%;}
 .hero-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:rgba(255,255,255,0.9);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;animation:fadeUp 0.6s 0.1s both;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,163,238,0.12);border:1px solid rgba(0,163,238,0.35);color:rgba(255,255,255,0.88);font-size:0.72rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;padding:7px 20px;border-radius:50px;margin-bottom:28px;animation:fadeUp 0.6s 0.25s both;}
-.badge-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse-dot 2s infinite;}
-@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.3)}}
-.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;line-height:1.2;color:white;margin-bottom:22px;animation:fadeUp 0.6s 0.4s both;}
+
+
+
+.hero h1{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;line-height:1.15;color:white;margin-bottom:16px;}
 .hero h1 span{color:#00a3ee;}
-.hero-sub{font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.65);margin-bottom:44px;animation:fadeUp 0.6s 0.55s both;}
+.hero-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,0.6);margin-bottom:0;}
 .hero-btn{display:inline-block;background:#00a3ee;color:white;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;padding:18px 52px;border-radius:50px;box-shadow:0 8px 32px rgba(0,163,238,0.5);transition:all 0.2s;animation:fadeUp 0.6s 0.7s both;letter-spacing:0.02em;}
 .hero-btn:hover{background:#0082c4;transform:translateY(-3px);box-shadow:0 14px 44px rgba(0,163,238,0.65);}
 .scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;animation:fadeUp 1s 1.2s both;}
@@ -58,7 +58,7 @@
 .processus-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px;}
 .ps-card{background:white;border:1px solid #e2e8f0;border-radius:20px;padding:32px 24px;position:relative;overflow:hidden;transition:all 0.25s;}
 .ps-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,163,238,0.1);}
-.ps-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,#00a3ee,#33b8f2);}
+.ps-card::before{display:none;}
 .ps-num{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:900;color:white;background:#00a3ee;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
 .ps-card h4{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;color:#0a1628;margin-bottom:10px;}
 .ps-card p{font-size:0.86rem;color:#64748b;line-height:1.7;}
@@ -127,13 +127,13 @@
 }
 @media(max-width:600px){
   .processus-steps{grid-template-columns:1fr;}
-  .hero h1{font-size:1.4rem;}
+  .hero h1{font-size:1.9rem;}
 }
+.sticky-nav *, .sticky-nav a { border: none !important; text-decoration: none !important; outline: none !important; }
 </style>
 </head>
 <body>
 
-<!-- ══ STICKY NAV ══ -->
 <nav class="sticky-nav" id="stickyNav">
   <a href="#" class="sn-logo">
     <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1rem;color:white;letter-spacing:0.08em;">SALES<span style="color:#00a3ee;">CONNECT</span></span>
@@ -158,37 +158,31 @@
   <a href="#rdv" class="mobile-cta" onclick="openCalendly(event)">Prendre RDV</a>
 </div>
 
-<!-- ══ HERO ══ -->
 <section class="hero" id="home">
   <div class="hero-bg">
     <img src="assets/robin.jpg" alt="Robin SalesConnect">
   </div>
   <div class="hero-overlay"></div>
-  <div class="hero-center">
-    <div class="hero-brand">SalesConnect</div>
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Cabinet de recrutement d'agents commerciaux indépendants
-    </div>
-<h1>Recrutons vos agents commerciaux<br><span>rémunérés à la commission</span></h1>
-    <button class="hero-btn" onclick="openCalendly(event)">📅 Prendre rendez-vous</button>
-  </div>
-  </div>
+<div class="hero-center">
+  <div class="hero-brand">SalesConnect</div>
+  <h1>Cabinet de recrutement d'agents<br>commerciaux indépendants</h1>
+  <p class="hero-sub">Recrutons vos agents commerciaux indépendants rémunérés exclusivement à la commission !</p>
+  <button class="hero-btn" onclick="openCalendly(event)" style="margin-top:28px">📅 Prendre rendez-vous</button>
+</div>
+ 
 </section>
 
-<!-- ══ INTRO ══ -->
 <section class="intro">
   <div class="container">
     <div class="reveal">
       <span class="section-tag">L'expertise SalesConnect</span>
       <h2>L'expertise en recrutement d'agents commerciaux indépendants pour booster votre performance commerciale.</h2>
       <p>Chez SalesConnect, nous comprenons que chaque entreprise est unique, et que pour atteindre vos objectifs de croissance, il est essentiel de s'entourer des bons talents.</p>
-    
+      <button class="btn-primary" onclick="openCalendly(event)">📅 Prendre rendez-vous</button>
     </div>
   </div>
 </section>
 
-<!-- ══ POURQUOI NOUS ══ -->
 <section class="pourquoi" id="pourquoi">
   <div class="container">
     <div class="section-header reveal">
@@ -215,7 +209,6 @@
   </div>
 </section>
 
-<!-- ══ AVANTAGES ══ -->
 <section class="avantages" id="avantages">
   <div class="container">
     <div class="avantages-inner">
@@ -230,16 +223,15 @@
           <li><div class="av-dot"></div><div class="av-text"><strong>Autonomie</strong><span>L'agent gère son emploi du temps et ses méthodes pour maximiser l'efficacité.</span></div></li>
           <li><div class="av-dot"></div><div class="av-text"><strong>Motivation élevée</strong><span>Rémunéré à la commission, il est directement poussé à atteindre des résultats concrets.</span></div></li>
         </ul>
-       
+        <button class="btn-primary" onclick="openCalendly(event)">🚀 Commencer maintenant</button>
       </div>
       <div class="avantages-photo reveal">
-        <img src="assets/robin.jpg" alt="Robin — Fondateur SalesConnect">
+        <img src="assets/robin_new.jpg" alt="Robin — Fondateur SalesConnect">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ PROCESSUS ══ -->
 <section class="processus" id="processus">
   <div class="container">
     <div class="section-header reveal">
@@ -270,57 +262,10 @@
       </div>
     </div>
     <div style="text-align:center" class="reveal">
-    
+      <button class="btn-primary" onclick="openCalendly(event)">🚀 Commencer maintenant</button>
     </div>
   </div>
 </section>
-
-<!-- ══ AVIS CLIENTS ══ -->
-<section class="avis-section" id="avis">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-tag">Avis clients</span>
-      <h2 class="section-title">Ce que disent nos clients</h2>
-    </div>
-    <div class="avis-grid reveal">
-      <div class="avis-card">
-        <div class="avis-stars">★★★★★</div>
-        <blockquote>"Nous travaillons avec le cabinet SalesConnect depuis quelques semaines seulement et nous avons signé avec 3 agents. Le suivi de la part de l'équipe est top et la qualité des profils proposés l'est tout autant. Je recommande !"</blockquote>
-        <div class="avis-author">
-          <img src="assets/robin_new.jpg" alt="Cédric C." class="avis-photo">
-          <div>
-            <span class="avis-name">Cédric C.</span>
-            <span class="avis-company">Flor France</span>
-          </div>
-        </div>
-      </div>
-      <div class="avis-card featured">
-        <div class="avis-stars">★★★★★</div>
-        <blockquote>"Je travaille avec le cabinet SalesConnect depuis quelques mois et j'en suis très satisfaite ! Les recruteurs sont disponibles, réactifs et à l'écoute ! Ils ont parfaitement su cerner mes attentes pour me proposer des agents commerciaux performants. Je recommande sans hésitation !"</blockquote>
-        <div class="avis-author">
-          <img src="assets/anais.jpg" alt="Anaïs M." class="avis-photo">
-          <div>
-            <span class="avis-name">Anaïs M.</span>
-            <span class="avis-company">La Marco</span>
-          </div>
-        </div>
-      </div>
-      <div class="avis-card">
-        <div class="avis-stars">★★★★★</div>
-        <blockquote>"Merci Robin et l'équipe SalesConnect pour la campagne de recrutement rapidement mise en place, et la qualité des profils sélectionnés…"</blockquote>
-        <div class="avis-author">
-          <img src="assets/severine.jpg" alt="Séverine M." class="avis-photo">
-          <div>
-            <span class="avis-name">Séverine M.</span>
-            <span class="avis-company">Oréa Production</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FAQ ══ -->
 <section class="faq" id="faq">
   <div class="container">
     <div class="faq-inner">
@@ -328,7 +273,7 @@
         <span class="section-tag" style="text-align:left">FAQ</span>
         <h2 class="section-title" style="text-align:left;font-size:2rem">Les questions fréquentes</h2>
         <p>Tout ce que vous devez savoir avant de nous contacter.</p>
-        
+        <button class="btn-primary" onclick="openCalendly(event)">📅 Réservez un appel</button>
       </div>
       <div class="faq-list reveal">
         <div class="faq-item open">
@@ -356,7 +301,6 @@
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="contact-inner">
@@ -386,7 +330,6 @@
   </div>
 </section>
 
-<!-- ══ CTA FINAL ══ -->
 <section class="cta-final">
   <div class="container">
     <div class="cta-final-inner reveal">
@@ -398,7 +341,6 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer>
   <div class="container">
     <div class="footer-top">

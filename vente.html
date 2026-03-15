@@ -7,8 +7,7 @@
 <title>SalesConnect — Lancez votre campagne</title>
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -26,14 +25,14 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-
+.topbar-logo, .topbar-logo * { text-decoration: none !important; }
 /* ── TOPBAR ── */
 .topbar {
   background: var(--navy);
   padding: 14px 40px;
   display: flex; justify-content: space-between; align-items: center;
   position: sticky; top: 0; z-index: 100;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  box-shadow: none;
 }
 .topbar-logo img { height: 44px; object-fit: contain; filter: brightness(10); }
 .topbar-btn {
@@ -107,7 +106,7 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var
 .steps-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .step-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 36px; position: relative; overflow: hidden; transition: all 0.25s; }
 .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,163,238,0.1); }
-.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--blue), #33b8f2); }
+.step-card::before { display: none; }
 .step-num { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
 .step-card h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 .step-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
@@ -191,6 +190,28 @@ footer { background: #040c18; padding: 48px 0 28px; }
 .reveal.visible { opacity:1; transform:none; }
 
 /* RESPONSIVE */
+
+@media(max-width:768px){
+  .hero-vente { padding: 60px 24px; }
+  .hero-vente h1 { font-size: 1.6rem; line-height: 1.3; }
+  .hero-vente p { font-size: 0.95rem; }
+  .topbar { padding: 12px 20px; }
+  .topbar-btn { padding: 10px 18px; font-size: 0.8rem; }
+  .eng-grid { grid-template-columns: repeat(2,1fr); }
+  .avis-grid { grid-template-columns: 1fr; }
+  .steps-wrap { grid-template-columns: 1fr; }
+  .pricing-wrap { grid-template-columns: 1fr; }
+  .offre-grid { grid-template-columns: 1fr; }
+  .methode-cards { grid-template-columns: 1fr; }
+  .section { padding: 56px 0; }
+  .container { padding: 0 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-links { flex-direction: column; gap: 12px; }
+}
+@media(max-width:480px){
+  .eng-grid { grid-template-columns: 1fr; }
+  .price-amount { font-size: 3rem; }
+}
 @media(max-width:900px){
   .container { padding: 0 24px; }
   .offre-grid,.methode-cards,.eng-grid,.steps-wrap,.pricing-wrap,.avis-grid,.faq-inner { grid-template-columns: 1fr; }
@@ -201,6 +222,7 @@ footer { background: #040c18; padding: 48px 0 28px; }
   .hero-vente h1 { font-size: 1.8rem; }
   .price-amount { font-size: 3rem; }
 }
+.topbar, .topbar *, .topbar a, header, header * { border: none !important; outline: none !important; box-shadow: none !important; }
 </style>
 </head>
 <body>
@@ -210,17 +232,16 @@ footer { background: #040c18; padding: 48px 0 28px; }
   <a href="index.html" class="topbar-logo">
     <span style="font-family:Montserrat,sans-serif;font-weight:900;font-size:1.1rem;color:white;letter-spacing:0.08em;">SALES<span style="color:#00a3ee;">CONNECT</span></span>
   </a>
-  <button class="topbar-btn" onclick="openCalendly(event)">📅 Lancer ma campagne</button>
+  <a href="https://buy.stripe.com/fZu00j2na90zbgpeGu3oA0A" target="_blank" class="topbar-btn">📅 Lancer ma campagne</a>
 </header>
 
 <!-- ── HERO ── -->
 <section class="hero-vente">
   <div class="hero-vente-inner">
-    <img src="assets/logo_white.png" alt="SalesConnect" class="logo">
     <span class="tag">Salesconnect — Cabinet de recrutement</span>
     <h1>Suite à notre échange, vous n'êtes<br>qu'à <span>quelques minutes</span> de lancer<br>votre campagne de recrutement…</h1>
     <p>Avant que nous démarrions ensemble, nous souhaitons vous récapituler tous les points importants à notre bonne collaboration !</p>
-    <button class="btn-primary" onclick="openCalendly(event)">🚀 Lancer ma campagne</button>
+    <a href="https://buy.stripe.com/fZu00j2na90zbgpeGu3oA0A" target="_blank" class="btn-primary">🚀 Lancer ma campagne</a>
   </div>
 </section>
 
@@ -278,11 +299,11 @@ footer { background: #040c18; padding: 48px 0 28px; }
       <div class="methode-card">
         <div class="methode-card-icon">🎯</div>
         <h4>L'expertise SalesConnect</h4>
-        <p>Méthodes et techniques de prospection & d'e-mailing propriétaires pour dénicher toujours plus d'agents commerciaux indépendants.</p>
+        <p>Méthodes et techniques de prospection & d'e-mailing  pour dénicher toujours plus d'agents commerciaux indépendants.</p>
       </div>
     </div>
     <div class="methode-cta reveal">
-      <button class="btn-primary" onclick="openCalendly(event)">🚀 Lancer ma campagne</button>
+      <a href="https://buy.stripe.com/fZu00j2na90zbgpeGu3oA0A" target="_blank" class="btn-primary">🚀 Lancer ma campagne</a>
     </div>
   </div>
 </section>
@@ -354,7 +375,7 @@ footer { background: #040c18; padding: 48px 0 28px; }
       <div class="pricing-card">
         <div class="pricing-badge">🔥 Le plus populaire</div>
         <h3>Pack de Lancement</h3>
-        <span class="price-amount">800€</span>
+        <span class="price-amount">1 200€</span>
         <span class="price-label">paiement unique · sans abonnement</span>
         <ul class="pricing-list">
           <li>✅ Nombre de candidats et recrutements en illimité</li>
@@ -405,7 +426,7 @@ footer { background: #040c18; padding: 48px 0 28px; }
         <p>"Nous travaillons avec le cabinet SalesConnect depuis quelques semaines seulement et nous avons signé avec 3 agents. Le suivi de la part de l'équipe est top et la qualité des profils proposés l'est tout autant. Je recommande !"</p>
         <div class="avis-author">
           <img src="assets/robin_new.jpg" alt="Cédric C." class="avis-photo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-          <div><strong>Cédric C.</strong><span>Flor France</span></div>
+          <div><strong>Cédric Caligaris</strong><span>Floribis France</span></div>
         </div>
       </div>
       <div class="avis-card featured">
@@ -413,15 +434,15 @@ footer { background: #040c18; padding: 48px 0 28px; }
         <p>"Je travaille avec le cabinet SalesConnect depuis quelques mois et j'en suis très satisfaite ! Les recruteurs sont disponibles, réactifs et à l'écoute ! Ils ont parfaitement su cerner mes attentes pour me proposer des agents commerciaux performants. Je recommande sans hésitation !"</p>
         <div class="avis-author">
           <img src="assets/anais.jpg" alt="Anaïs M." class="avis-photo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-          <div><strong>Anaïs M.</strong><span>La Marco</span></div>
+          <div><strong>Anaïs Marconnet</strong><span>La Marconnête</span></div>
         </div>
       </div>
       <div class="avis-card">
         <div class="avis-stars">★★★★★</div>
         <p>"Merci Robin et l'équipe SalesConnect pour la campagne de recrutement rapidement mise en place, et la qualité des profils sélectionnés…"</p>
         <div class="avis-author">
-          <img src="assets/severine.jpg" alt="Séverine M." class="avis-photo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-          <div><strong>Séverine M.</strong><span>Oréa Production</span></div>
+          <img src="assets/severine.jpg" alt="Séverine Melchiorre" class="avis-photo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;object-position:center top;">
+          <div><strong>Séverine Melchiorre</strong><span>Oréadis Production</span></div>
         </div>
       </div>
     </div>
@@ -434,8 +455,8 @@ footer { background: #040c18; padding: 48px 0 28px; }
     <div class="cta-final-inner reveal">
       <span class="tag">Passez à l'action</span>
       <h2>Prêt à lancer votre campagne<br>de recrutement ?</h2>
-      <p>Premiers profils sous 14 jours. Campagne illimitée.</p>
-      <button class="btn-primary" onclick="openCalendly(event)">🚀 Lancer ma campagne maintenant</button>
+      <p>Premiers profils sous 14 jours. Campagne illimitée. Zéro charge fixe.</p>
+      <a href="https://buy.stripe.com/fZu00j2na90zbgpeGu3oA0A" target="_blank" class="btn-primary">🚀 Lancer ma campagne maintenant</a>
     </div>
   </div>
 </section>
