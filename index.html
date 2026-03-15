@@ -11,107 +11,123 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <link rel="stylesheet" href="css/style.css">
 <style>
-.hero { min-height:100vh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 80px;position:relative;overflow:hidden;text-align:center; }
-.hero-bg { position:absolute;inset:0;z-index:0; }
-.hero-bg img { width:100%;height:100%;object-fit:cover;object-position:center top;display:block; }
-.hero-overlay { position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,14,30,0.78) 0%,rgba(8,18,38,0.85) 50%,rgba(6,14,30,0.93) 100%); }
-.hero-center { position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:860px;width:100%; }
-.hero-logo { height:110px;object-fit:contain;margin-bottom:20px;animation:fadeUp 0.6s 0.1s both; }
-.hero-badge { display:inline-flex;align-items:center;gap:8px;background:rgba(0,163,238,0.12);border:1px solid rgba(0,163,238,0.35);color:rgba(255,255,255,0.88);font-size:0.72rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;padding:7px 20px;border-radius:50px;margin-bottom:28px;animation:fadeUp 0.6s 0.25s both; }
-.badge-dot { width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse-dot 2s infinite; }
-@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
-.hero h1 { font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4.5vw,3.6rem);font-weight:900;line-height:1.15;color:white;margin-bottom:22px;animation:fadeUp 0.6s 0.4s both; }
-.hero h1 span { color:#00a3ee; }
-.hero-sub { font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.65);margin-bottom:44px;animation:fadeUp 0.6s 0.55s both; }
-.hero-btn { display:inline-block;background:#00a3ee;color:white;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;padding:18px 52px;border-radius:50px;box-shadow:0 8px 32px rgba(0,163,238,0.5);transition:all 0.2s;animation:fadeUp 0.6s 0.7s both;letter-spacing:0.02em; }
-.hero-btn:hover { background:#0082c4;transform:translateY(-3px);box-shadow:0 14px 44px rgba(0,163,238,0.65); }
-.scroll-indicator { position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;animation:fadeUp 1s 1.2s both; }
-.scroll-indicator span { font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3); }
-.arrow-down { width:18px;height:18px;border-right:2px solid rgba(255,255,255,0.25);border-bottom:2px solid rgba(255,255,255,0.25);transform:rotate(45deg);animation:bounce 1.8s infinite; }
-@keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
+.hero{min-height:100vh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 80px;position:relative;overflow:hidden;text-align:center;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,14,30,0.78) 0%,rgba(8,18,38,0.85) 50%,rgba(6,14,30,0.93) 100%);}
+.hero-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:860px;width:100%;}
+.hero-brand{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:rgba(255,255,255,0.9);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;animation:fadeUp 0.6s 0.1s both;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,163,238,0.12);border:1px solid rgba(0,163,238,0.35);color:rgba(255,255,255,0.88);font-size:0.72rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;padding:7px 20px;border-radius:50px;margin-bottom:28px;animation:fadeUp 0.6s 0.25s both;}
+.badge-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse-dot 2s infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.3)}}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;line-height:1.2;color:white;margin-bottom:22px;animation:fadeUp 0.6s 0.4s both;}
+.hero h1 span{color:#00a3ee;}
+.hero-sub{font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.65);margin-bottom:44px;animation:fadeUp 0.6s 0.55s both;}
+.hero-btn{display:inline-block;background:#00a3ee;color:white;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;padding:18px 52px;border-radius:50px;box-shadow:0 8px 32px rgba(0,163,238,0.5);transition:all 0.2s;animation:fadeUp 0.6s 0.7s both;letter-spacing:0.02em;}
+.hero-btn:hover{background:#0082c4;transform:translateY(-3px);box-shadow:0 14px 44px rgba(0,163,238,0.65);}
+.scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;animation:fadeUp 1s 1.2s both;}
+.scroll-indicator span{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+.arrow-down{width:18px;height:18px;border-right:2px solid rgba(255,255,255,0.25);border-bottom:2px solid rgba(255,255,255,0.25);transform:rotate(45deg);animation:bounce 1.8s infinite;}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
 
-.intro { padding:90px 0;background:#f4f7fb;text-align:center; }
-.intro h2 { font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#0a1628;margin-bottom:20px;line-height:1.3;max-width:750px;margin-left:auto;margin-right:auto; }
-.intro p { font-size:1rem;color:#64748b;line-height:1.85;max-width:680px;margin:0 auto 36px; }
+.intro{padding:90px 0;background:#f4f7fb;text-align:center;}
+.intro h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#0a1628;margin-bottom:20px;line-height:1.3;max-width:750px;margin-left:auto;margin-right:auto;}
+.intro p{font-size:1rem;color:#64748b;line-height:1.85;max-width:680px;margin:0 auto 36px;}
 
-.pourquoi { padding:90px 0;background:white; }
-.pourquoi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:48px; }
-.pq-card { background:#f4f7fb;border:1px solid #e2e8f0;border-radius:20px;padding:36px 28px;transition:all 0.25s; }
-.pq-card:hover { transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,163,238,0.1);border-color:rgba(0,163,238,0.3); }
-.pq-icon { font-size:2.2rem;margin-bottom:18px; }
-.pq-card h3 { font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:#0a1628;margin-bottom:12px; }
-.pq-card p { font-size:0.9rem;color:#64748b;line-height:1.7; }
-.pourquoi-cta { text-align:center; }
+.pourquoi{padding:90px 0;background:white;}
+.pourquoi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:48px;}
+.pq-card{background:#f4f7fb;border:1px solid #e2e8f0;border-radius:20px;padding:36px 28px;transition:all 0.25s;}
+.pq-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,163,238,0.1);border-color:rgba(0,163,238,0.3);}
+.pq-icon{font-size:2.2rem;margin-bottom:18px;}
+.pq-card h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:#0a1628;margin-bottom:12px;}
+.pq-card p{font-size:0.9rem;color:#64748b;line-height:1.7;}
 
-.avantages { padding:90px 0;background:linear-gradient(135deg,#060e1e,#0a1628); }
-.avantages-inner { display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center; }
-.avantages-text h2 { font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:white;margin-bottom:20px;line-height:1.2; }
-.avantages-text p { font-size:0.95rem;color:rgba(255,255,255,0.55);line-height:1.85;margin-bottom:32px; }
-.avantages-list { list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:36px; }
-.avantages-list li { display:flex;gap:14px;align-items:flex-start; }
-.av-dot { width:8px;height:8px;background:#00a3ee;border-radius:50%;flex-shrink:0;margin-top:7px; }
-.av-text strong { font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;color:white;display:block;margin-bottom:3px; }
-.av-text span { font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.5; }
-.avantages-photo img { width:100%;height:480px;object-fit:cover;object-position:top;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,0.4); }
+.avantages{padding:90px 0;background:linear-gradient(135deg,#060e1e,#0a1628);}
+.avantages-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.avantages-text h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:white;margin-bottom:20px;line-height:1.2;}
+.avantages-text p{font-size:0.95rem;color:rgba(255,255,255,0.55);line-height:1.85;margin-bottom:32px;}
+.avantages-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:36px;}
+.avantages-list li{display:flex;gap:14px;align-items:flex-start;}
+.av-dot{width:8px;height:8px;background:#00a3ee;border-radius:50%;flex-shrink:0;margin-top:7px;}
+.av-text strong{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;color:white;display:block;margin-bottom:3px;}
+.av-text span{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.5;}
+.avantages-photo img{width:100%;height:480px;object-fit:cover;object-position:top;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,0.4);}
 
-.processus { padding:90px 0;background:#f4f7fb; }
-.processus-intro { font-size:1rem;color:#64748b;line-height:1.85;max-width:700px;margin:0 auto 56px;text-align:center; }
-.processus-steps { display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px; }
-.ps-card { background:white;border:1px solid #e2e8f0;border-radius:20px;padding:32px 24px;position:relative;overflow:hidden;transition:all 0.25s; }
-.ps-card:hover { transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,163,238,0.1); }
-.ps-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,#00a3ee,#33b8f2); }
-.ps-num { font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:900;color:white;background:#00a3ee;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px; }
-.ps-card h4 { font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;color:#0a1628;margin-bottom:10px; }
-.ps-card p { font-size:0.86rem;color:#64748b;line-height:1.7; }
-.processus-cta { text-align:center; }
+.processus{padding:90px 0;background:#f4f7fb;}
+.processus-intro{font-size:1rem;color:#64748b;line-height:1.85;max-width:700px;margin:0 auto 56px;text-align:center;}
+.processus-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px;}
+.ps-card{background:white;border:1px solid #e2e8f0;border-radius:20px;padding:32px 24px;position:relative;overflow:hidden;transition:all 0.25s;}
+.ps-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,163,238,0.1);}
+.ps-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,#00a3ee,#33b8f2);}
+.ps-num{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:900;color:white;background:#00a3ee;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.ps-card h4{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;color:#0a1628;margin-bottom:10px;}
+.ps-card p{font-size:0.86rem;color:#64748b;line-height:1.7;}
 
-.faq { padding:90px 0;background:white; }
-.faq-inner { display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start; }
-.faq-left p { font-size:0.92rem;color:#64748b;line-height:1.7;margin:16px 0 28px; }
-.faq-list { display:flex;flex-direction:column; }
-.faq-item { border-bottom:1px solid #e2e8f0; }
-.faq-question { display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:600;color:#0a1628;gap:16px;transition:color 0.2s;user-select:none; }
-.faq-question:hover { color:#00a3ee; }
-.faq-toggle { width:30px;height:30px;flex-shrink:0;border:1px solid #e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#94a3b8;transition:all 0.3s; }
-.faq-item.open .faq-toggle { background:#00a3ee;border-color:#00a3ee;color:white;transform:rotate(45deg); }
-.faq-answer { font-size:0.9rem;color:#64748b;line-height:1.75;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s; }
-.faq-item.open .faq-answer { max-height:200px;padding-bottom:22px; }
+/* AVIS avec photos */
+.avis-section{padding:90px 0;background:white;}
+.avis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.avis-card{background:#f4f7fb;border:1px solid #e2e8f0;border-radius:20px;padding:32px;transition:all 0.25s;}
+.avis-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08);}
+.avis-card.featured{background:linear-gradient(145deg,#0f2040,#0a1628);border-color:transparent;}
+.avis-card.featured blockquote{color:rgba(255,255,255,0.75);}
+.avis-card.featured .avis-name{color:white;}
+.avis-card.featured .avis-company{color:rgba(255,255,255,0.5);}
+.avis-stars{color:#f59e0b;font-size:1.1rem;margin-bottom:16px;letter-spacing:2px;}
+.avis-card blockquote{font-size:0.9rem;color:#64748b;line-height:1.75;margin-bottom:24px;font-style:italic;}
+.avis-author{display:flex;align-items:center;gap:12px;}
+.avis-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #e2e8f0;}
+.avis-card.featured .avis-photo{border-color:rgba(255,255,255,0.2);}
+.avis-name{font-family:'Montserrat',sans-serif;font-size:0.88rem;font-weight:700;color:#0a1628;display:block;}
+.avis-company{font-size:0.78rem;color:#94a3b8;}
 
-.contact { padding:90px 0;background:#f4f7fb; }
-.contact-inner { display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start; }
-.contact-left h2 { font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#0a1628;margin-bottom:16px;line-height:1.2; }
-.contact-left p { font-size:0.95rem;color:#64748b;line-height:1.8;margin-top:16px; }
-.contact-form { background:white;border:1px solid #e2e8f0;border-radius:24px;padding:40px; }
-.contact-form h3 { font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:#0a1628;margin-bottom:28px; }
-.form-group { margin-bottom:18px; }
-.form-group label { display:block;font-size:0.82rem;font-weight:600;color:#475569;margin-bottom:7px;letter-spacing:0.04em; }
-.form-group input { width:100%;padding:13px 16px;border:1px solid #e2e8f0;border-radius:12px;font-family:'Open Sans',sans-serif;font-size:0.92rem;color:#1a2035;background:#f8fafc;transition:border-color 0.2s,box-shadow 0.2s;outline:none; }
-.form-group input:focus { border-color:#00a3ee;box-shadow:0 0 0 3px rgba(0,163,238,0.1);background:white; }
-.form-submit { width:100%;background:#00a3ee;color:white;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;padding:16px;border-radius:50px;box-shadow:0 6px 24px rgba(0,163,238,0.4);transition:all 0.2s;margin-top:8px; }
-.form-submit:hover { background:#0082c4;transform:translateY(-2px); }
+.faq{padding:90px 0;background:#f4f7fb;}
+.faq-inner{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;}
+.faq-left p{font-size:0.92rem;color:#64748b;line-height:1.7;margin:16px 0 28px;}
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid #e2e8f0;}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:600;color:#0a1628;gap:16px;transition:color 0.2s;user-select:none;}
+.faq-question:hover{color:#00a3ee;}
+.faq-toggle{width:30px;height:30px;flex-shrink:0;border:1px solid #e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#94a3b8;transition:all 0.3s;}
+.faq-item.open .faq-toggle{background:#00a3ee;border-color:#00a3ee;color:white;transform:rotate(45deg);}
+.faq-answer{font-size:0.9rem;color:#64748b;line-height:1.75;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s;}
+.faq-item.open .faq-answer{max-height:200px;padding-bottom:22px;}
 
-.cta-final { padding:100px 0;background:linear-gradient(135deg,#060e1e,#0a1628);text-align:center;position:relative;overflow:hidden; }
-.cta-final::before { content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,163,238,0.12) 0%,transparent 70%);pointer-events:none; }
-.cta-final-inner { position:relative;z-index:1; }
+.contact{padding:90px 0;background:white;}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.contact-left h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#0a1628;margin-bottom:16px;line-height:1.2;}
+.contact-left p{font-size:0.95rem;color:#64748b;line-height:1.8;margin-top:16px;}
+.contact-form{background:#f4f7fb;border:1px solid #e2e8f0;border-radius:24px;padding:40px;}
+.contact-form h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:#0a1628;margin-bottom:28px;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:0.82rem;font-weight:600;color:#475569;margin-bottom:7px;letter-spacing:0.04em;}
+.form-group input{width:100%;padding:13px 16px;border:1px solid #e2e8f0;border-radius:12px;font-family:'Open Sans',sans-serif;font-size:0.92rem;color:#1a2035;background:white;transition:border-color 0.2s,box-shadow 0.2s;outline:none;}
+.form-group input:focus{border-color:#00a3ee;box-shadow:0 0 0 3px rgba(0,163,238,0.1);}
+.form-submit{width:100%;background:#00a3ee;color:white;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;padding:16px;border-radius:50px;box-shadow:0 6px 24px rgba(0,163,238,0.4);transition:all 0.2s;margin-top:8px;}
+.form-submit:hover{background:#0082c4;transform:translateY(-2px);}
 
-.section-tag { font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#00a3ee;margin-bottom:12px;display:block;text-align:center; }
-.section-title { font-family:'Montserrat',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;line-height:1.2;color:#0a1628;margin-bottom:14px;text-align:center; }
-.section-header { margin-bottom:56px; }
-.btn-primary { display:inline-block;background:#00a3ee;color:white;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;padding:18px 52px;border-radius:50px;box-shadow:0 8px 32px rgba(0,163,238,0.5);transition:all 0.2s;letter-spacing:0.02em;text-decoration:none; }
-.btn-primary:hover { background:#0082c4;transform:translateY(-3px);box-shadow:0 14px 44px rgba(0,163,238,0.65); }
+.cta-final{padding:100px 0;background:linear-gradient(135deg,#060e1e,#0a1628);text-align:center;position:relative;overflow:hidden;}
+.cta-final::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,163,238,0.12) 0%,transparent 70%);pointer-events:none;}
+.cta-final-inner{position:relative;z-index:1;}
 
-@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-.reveal { opacity:0;transform:translateY(32px);transition:opacity 0.75s ease,transform 0.75s ease; }
-.reveal.visible { opacity:1;transform:none; }
+.section-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#00a3ee;margin-bottom:12px;display:block;text-align:center;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;line-height:1.2;color:#0a1628;margin-bottom:14px;text-align:center;}
+.section-header{margin-bottom:56px;}
+.btn-primary{display:inline-block;background:#00a3ee;color:white;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;padding:18px 52px;border-radius:50px;box-shadow:0 8px 32px rgba(0,163,238,0.5);transition:all 0.2s;letter-spacing:0.02em;text-decoration:none;}
+.btn-primary:hover{background:#0082c4;transform:translateY(-3px);box-shadow:0 14px 44px rgba(0,163,238,0.65);}
 
-@media(max-width:900px) {
-  .pourquoi-grid,.avantages-inner,.contact-inner,.faq-inner { grid-template-columns:1fr; }
-  .avantages-photo { display:none; }
-  .processus-steps { grid-template-columns:1fr 1fr; }
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.75s ease,transform 0.75s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .pourquoi-grid,.avantages-inner,.contact-inner,.faq-inner{grid-template-columns:1fr;}
+  .avantages-photo{display:none;}
+  .processus-steps{grid-template-columns:1fr 1fr;}
+  .avis-grid{grid-template-columns:1fr;}
 }
-@media(max-width:600px) {
-  .processus-steps { grid-template-columns:1fr; }
-  .hero h1 { font-size:1.9rem; }
+@media(max-width:600px){
+  .processus-steps{grid-template-columns:1fr;}
+  .hero h1{font-size:1.4rem;}
 }
 </style>
 </head>
@@ -120,7 +136,7 @@
 <!-- ══ STICKY NAV ══ -->
 <nav class="sticky-nav" id="stickyNav">
   <a href="#" class="sn-logo">
-    <img src="assets/logo_white.png" alt="SalesConnect" class="sn-logo-img">
+    <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1rem;color:white;letter-spacing:0.08em;">SALES<span style="color:#00a3ee;">CONNECT</span></span>
   </a>
   <div class="sn-links">
     <a href="#pourquoi">Pourquoi nous</a>
@@ -149,18 +165,14 @@
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-center">
-    <img src="assets/logo_white.png" alt="SalesConnect" class="hero-logo">
+    <div class="hero-brand">SalesConnect</div>
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      Cabinet de recrutement spécialisé
+      Cabinet de recrutement d'agents commerciaux indépendants
     </div>
-    <h1>Recrutons vos <span>agents commerciaux indépendants</span><br>et apporteurs d'affaires à la commission</h1>
-    <p class="hero-sub">Zéro charge fixe — uniquement des résultats.</p>
+<h1>Recrutons vos agents commerciaux<br><span>rémunérés à la commission</span></h1>
     <button class="hero-btn" onclick="openCalendly(event)">📅 Prendre rendez-vous</button>
   </div>
-  <div class="scroll-indicator">
-    <span>Découvrir</span>
-    <div class="arrow-down"></div>
   </div>
 </section>
 
@@ -171,7 +183,7 @@
       <span class="section-tag">L'expertise SalesConnect</span>
       <h2>L'expertise en recrutement d'agents commerciaux indépendants pour booster votre performance commerciale.</h2>
       <p>Chez SalesConnect, nous comprenons que chaque entreprise est unique, et que pour atteindre vos objectifs de croissance, il est essentiel de s'entourer des bons talents.</p>
-      <button class="btn-primary" onclick="openCalendly(event)">📅 Prendre rendez-vous</button>
+    
     </div>
   </div>
 </section>
@@ -200,9 +212,6 @@
         <p>Notre approche est totalement personnalisée. Nous vous accompagnons à chaque étape du processus de recrutement.</p>
       </div>
     </div>
-    <div class="pourquoi-cta reveal">
-      <button class="btn-primary" onclick="openCalendly(event)">📅 Faire une demande</button>
-    </div>
   </div>
 </section>
 
@@ -213,7 +222,7 @@
       <div class="avantages-text reveal">
         <span class="section-tag" style="text-align:left">Pourquoi un agent commercial indépendant ?</span>
         <h2>Les avantages d'un agent commercial indépendant</h2>
-        <p>Faire appel à un agent commercial indépendant présente de nombreux avantages. Flexibles, experts et motivés, ces professionnels s'adaptent rapidement à vos besoins sans les contraintes des employés permanents.</p>
+        <p>Faire appel à un agent commercial indépendant présente de nombreux avantages. Flexibles, experts et motivés, ces professionnels s'adaptent rapidement à vos besoins.</p>
         <ul class="avantages-list">
           <li><div class="av-dot"></div><div class="av-text"><strong>Flexibilité</strong><span>Adaptez la taille de votre équipe commerciale selon vos besoins.</span></div></li>
           <li><div class="av-dot"></div><div class="av-text"><strong>Rentabilité</strong><span>Payez uniquement pour la performance, sans frais fixes ou charges salariales.</span></div></li>
@@ -221,7 +230,7 @@
           <li><div class="av-dot"></div><div class="av-text"><strong>Autonomie</strong><span>L'agent gère son emploi du temps et ses méthodes pour maximiser l'efficacité.</span></div></li>
           <li><div class="av-dot"></div><div class="av-text"><strong>Motivation élevée</strong><span>Rémunéré à la commission, il est directement poussé à atteindre des résultats concrets.</span></div></li>
         </ul>
-        <button class="btn-primary" onclick="openCalendly(event)">🚀 Commencer maintenant !</button>
+       
       </div>
       <div class="avantages-photo reveal">
         <img src="assets/robin.jpg" alt="Robin — Fondateur SalesConnect">
@@ -237,7 +246,7 @@
       <span class="section-tag">Notre processus</span>
       <h2 class="section-title">Comment nous vous aidons à recruter les meilleurs agents ?</h2>
     </div>
-    <p class="processus-intro reveal">Chez SalesConnect, nous croyons que chaque entreprise mérite un commercial compétent et motivé pour atteindre ses objectifs. C'est pourquoi nous avons mis en place un processus structuré et personnalisé pour vous aider à trouver l'agent idéal.</p>
+    <p class="processus-intro reveal">Chez SalesConnect, nous croyons que chaque entreprise mérite un commercial compétent et motivé. C'est pourquoi nous avons mis en place un processus structuré et personnalisé pour vous aider à trouver l'agent idéal.</p>
     <div class="processus-steps reveal">
       <div class="ps-card">
         <div class="ps-num">01</div>
@@ -260,8 +269,53 @@
         <p>Notre suivi continu vous permet de maximiser la performance de vos agents commerciaux indépendants.</p>
       </div>
     </div>
-    <div class="processus-cta reveal">
-      <button class="btn-primary" onclick="openCalendly(event)">🚀 Commencer maintenant !</button>
+    <div style="text-align:center" class="reveal">
+    
+    </div>
+  </div>
+</section>
+
+<!-- ══ AVIS CLIENTS ══ -->
+<section class="avis-section" id="avis">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Avis clients</span>
+      <h2 class="section-title">Ce que disent nos clients</h2>
+    </div>
+    <div class="avis-grid reveal">
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <blockquote>"Nous travaillons avec le cabinet SalesConnect depuis quelques semaines seulement et nous avons signé avec 3 agents. Le suivi de la part de l'équipe est top et la qualité des profils proposés l'est tout autant. Je recommande !"</blockquote>
+        <div class="avis-author">
+          <img src="assets/robin_new.jpg" alt="Cédric C." class="avis-photo">
+          <div>
+            <span class="avis-name">Cédric C.</span>
+            <span class="avis-company">Flor France</span>
+          </div>
+        </div>
+      </div>
+      <div class="avis-card featured">
+        <div class="avis-stars">★★★★★</div>
+        <blockquote>"Je travaille avec le cabinet SalesConnect depuis quelques mois et j'en suis très satisfaite ! Les recruteurs sont disponibles, réactifs et à l'écoute ! Ils ont parfaitement su cerner mes attentes pour me proposer des agents commerciaux performants. Je recommande sans hésitation !"</blockquote>
+        <div class="avis-author">
+          <img src="assets/anais.jpg" alt="Anaïs M." class="avis-photo">
+          <div>
+            <span class="avis-name">Anaïs M.</span>
+            <span class="avis-company">La Marco</span>
+          </div>
+        </div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <blockquote>"Merci Robin et l'équipe SalesConnect pour la campagne de recrutement rapidement mise en place, et la qualité des profils sélectionnés…"</blockquote>
+        <div class="avis-author">
+          <img src="assets/severine.jpg" alt="Séverine M." class="avis-photo">
+          <div>
+            <span class="avis-name">Séverine M.</span>
+            <span class="avis-company">Oréa Production</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -274,7 +328,7 @@
         <span class="section-tag" style="text-align:left">FAQ</span>
         <h2 class="section-title" style="text-align:left;font-size:2rem">Les questions fréquentes</h2>
         <p>Tout ce que vous devez savoir avant de nous contacter.</p>
-        <button class="btn-primary" onclick="openCalendly(event)">📅 Réservez un appel</button>
+        
       </div>
       <div class="faq-list reveal">
         <div class="faq-item open">
@@ -282,7 +336,7 @@
           <div class="faq-answer">Un agent commercial indépendant vous offre flexibilité, expertise sectorielle, et une rémunération basée sur la performance. Vous réduisez vos coûts fixes tout en bénéficiant d'un collaborateur motivé et expérimenté.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">Combien de temps faut-il pour recruter un agent commercial via SalesConnect ?<div class="faq-toggle">+</div></div>
+          <div class="faq-question" onclick="toggleFaq(this)">Combien de temps faut-il pour recruter via SalesConnect ?<div class="faq-toggle">+</div></div>
           <div class="faq-answer">Notre processus est rapide et efficace. En moyenne, il faut 2 à 4 semaines pour identifier, sélectionner et intégrer l'agent commercial qui correspondra à vos besoins.</div>
         </div>
         <div class="faq-item">
@@ -291,11 +345,11 @@
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">SalesConnect propose-t-il un suivi après le recrutement ?<div class="faq-toggle">+</div></div>
-          <div class="faq-answer">Oui, nous accompagnons nos clients après la mise en relation pour garantir une collaboration fluide et optimale. Nous restons à vos côtés pour suivre les performances et ajuster si nécessaire.</div>
+          <div class="faq-answer">Oui, nous accompagnons nos clients après la mise en relation pour garantir une collaboration fluide et optimale.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">Comment fonctionne la rémunération des agents commerciaux indépendants ?<div class="faq-toggle">+</div></div>
-          <div class="faq-answer">Les agents commerciaux indépendants sont rémunérés exclusivement à la commission, sur la base des ventes qu'ils réalisent. Cela vous garantit un investissement rentable et directement lié à leurs performances.</div>
+          <div class="faq-question" onclick="toggleFaq(this)">Comment fonctionne la rémunération des agents ?<div class="faq-toggle">+</div></div>
+          <div class="faq-answer">Les agents commerciaux indépendants sont rémunérés exclusivement à la commission, sur la base des ventes qu'ils réalisent.</div>
         </div>
       </div>
     </div>
@@ -349,7 +403,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo_white.png" alt="SalesConnect" class="footer-logo">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.3rem;color:white;letter-spacing:0.08em;margin-bottom:16px;">SALES<span style="color:#00a3ee;">CONNECT</span></div>
         <p>Cabinet de recrutement spécialisé dans le placement d'agents commerciaux indépendants rémunérés à la commission.</p>
       </div>
       <div class="footer-col">
@@ -368,7 +422,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 SalesConnect. Tous droits réservés.</p>
-      <p><a href="mentions-legales.html" style="color:rgba(255,255,255,0.35);text-decoration:none">Mentions légales</a> · <a href="politique-confidentialite.html" style="color:rgba(255,255,255,0.35);text-decoration:none">Politique de confidentialité</a></p>
+      <p><a href="mentions-legales.html" style="color:rgba(255,255,255,0.35);text-decoration:none">Mentions légales</a> · <a href="mentions-legales.html" style="color:rgba(255,255,255,0.35);text-decoration:none">Politique de confidentialité</a></p>
     </div>
   </div>
 </footer>
